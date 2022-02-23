@@ -42,6 +42,7 @@ const Home: NextPage = () => {
                     urlImage={item.Poster}
                     title={item.Title}
                     year={item.Year}
+                    key={item.imdbID}
                   />
                 </Grid>
               );
