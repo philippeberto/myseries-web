@@ -37,7 +37,7 @@ const Home: NextPage = () => {
             data.results.Search &&
             data.results.Search.map((item: any) => {
               return (
-                <Grid item xs={3}>
+                <Grid item xs={3} key={"grid-" + item.imdbID}>
                   <MediaCard
                     urlImage={item.Poster}
                     title={item.Title}
