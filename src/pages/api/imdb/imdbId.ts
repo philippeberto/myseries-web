@@ -5,10 +5,7 @@ import axios from "axios";
 
 const url = "https://movie-database-imdb-alternative.p.rapidapi.com/";
 
-export default async function fromGetBySearch(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function fromGetBySearch(req: any, res: any) {
   console.log(req.query);
   const dinamicDate = new Date();
   const options = getBySearch(req.query.title);
