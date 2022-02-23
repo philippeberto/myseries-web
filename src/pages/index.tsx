@@ -35,7 +35,7 @@ const Home: NextPage = () => {
           {data &&
             data.results &&
             data.results.Search &&
-            data.results.Search.map((item) => {
+            data.results.Search.map((item: any) => {
               return (
                 <Grid item xs={3}>
                   <MediaCard
