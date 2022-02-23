@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   const [title, setTitle] = useState("");
   const { data, error } = useSWR(`/api/imdb/imdbId?title=${title}`, fetcher);
 
-  function handleChange(event) {
+  function handleChange(event: any) {
     setTimeout(() => {
       setTitle(event.target.value);
     }, 1000);
