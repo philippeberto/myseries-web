@@ -1,14 +1,10 @@
 // Next.js API route support: https://nextjs.org/docs/api-routes/introduction
-import type { NextApiRequest, NextApiResponse } from "next";
 import { getBySearch } from "../../../utils/http";
 import axios from "axios";
 
 const url = "https://movie-database-imdb-alternative.p.rapidapi.com/";
 
-export default async function fromGetBySearch(
-  req: NextApiRequest,
-  res: NextApiResponse
-) {
+export default async function fromGetBySearch(req, res) {
   console.log(req.query);
   const dinamicDate = new Date();
   const options = getBySearch(req.query.title);

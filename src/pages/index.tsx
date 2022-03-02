@@ -10,7 +10,7 @@ const Home: NextPage = () => {
   const [title, setTitle] = useState("");
   const { data, error } = useSWR(`/api/imdb/imdbId?title=${title}`, fetcher);
 
-  function handleChange(event) {
+  function handleChange(event: any) {
     setTimeout(() => {
       setTitle(event.target.value);
     }, 1000);
@@ -35,13 +35,14 @@ const Home: NextPage = () => {
           {data &&
             data.results &&
             data.results.Search &&
-            data.results.Search.map((item) => {
+            data.results.Search.map((item: any) => {
               return (
-                <Grid item xs={3}>
+                <Grid item xs={3} key={"grid-" + item.imdbID}>
                   <MediaCard
                     urlImage={item.Poster}
                     title={item.Title}
                     year={item.Year}
+                    key={item.imdbID}
                   />
                 </Grid>
               );
